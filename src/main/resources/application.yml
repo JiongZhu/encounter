@@ -1,0 +1,83 @@
+spring:
+  devtools:
+    restart:
+      enabled: true
+      additional-paths: src/main/java
+
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    username: root
+    password: zhxy
+    url: jdbc:mysql://39.106.205.37:3306/encounter?useUnicode=true&characterEncoding=utf-8&useSSL=false
+    type: com.alibaba.druid.pool.DruidDataSource
+    druid:
+      initial-size: 1
+      max-active: 10
+      max-wait: 60000
+      min-idle: 1
+      time-between-eviction-runs-millis: 60000
+      min-evictable-idle-time-millis: 300000
+      validation-query: SELECT 1
+      test-while-idle: true
+      test-on-borrow: false
+      test-on-return: false
+      pool-prepared-statements: true
+      max-open-prepared-statements: 20
+      connection-properties: druid.stat.merggSql=ture;druid.stat.slowSqlMillis=5000
+      filter:
+        stat:
+          enabled: true
+        log4j2:
+          enabled: true
+      web-stat-filter:
+        enabled: true
+        url-pattern: /*
+        exclusions: "*.js,*.gif,*.jpg,*.bmp,*.png,*.css,*.ico,/druid/*"
+        session-stat-enable: false
+        session-stat-max-count: 1000
+        principal-session-name: xxx.user
+        principal-cookie-name: xxx.user
+        profile-enable: false
+      stat-view-servlet:
+        enabled: true
+        url-pattern: /druid/*
+        reset-enable: fasle
+        login-username: admin
+        login-password: admin
+        allow: 127.0.0.1,10.12.0.103
+
+  freemarker:
+    cache: true
+    template-loader-path: classpath:/templates/
+    allow-request-override: false
+    check-template-location: true
+    charset: UTF-8
+    content-type: text/html
+    expose-spring-macro-helpers: false
+    request-context-attribute: request
+    suffix: .ftl
+    settings:
+      number_format: #
+
+  cache:
+    type: redis
+    cache-names: redis_cache
+    redis:
+      time-to-live: 60000ms
+
+  redis:
+    host: 39.106.205.37
+    password: zhxy
+    timeout: 0ms
+
+mybatis-plus:
+  type-aliases-package: com.jiong.encounter.entity
+  global-config:
+    id-type: 1
+    field-strategy: 0
+    db-column-underline: false
+    refresh-mapper: true
+
+logging:
+  config: classpath:log4j2.yml
+

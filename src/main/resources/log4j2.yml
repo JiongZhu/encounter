@@ -1,0 +1,177 @@
+Configuration:
+  status: WARN
+  monitorInterval: 3000
+
+  Properties: # 定义全局变量
+    Property: # 缺省配置（用于开发环境）。其他环境需要在VM参数中指定，如下：
+    #测试：-Dlog.level.console=warn -Dlog.level.xjj=trace
+    #生产：-Dlog.level.console=warn -Dlog.level.xjj=info
+      -
+        name: LOG_PATH
+        value: F://log//logs
+      -
+        name: LOG_FILE
+        value: ${LOG_PATH}
+      -
+        name: LOG_EXCEPTION_CONVERSION_WORD
+        value: "%xwEx"
+      -
+        name: LOG_LEVEL_PATTERN
+        value: "%5p"
+      -
+        name: LOG_DATEFORMAT_PATTERN
+        value: yyyy-MM-dd HH:mm:ss.SSS
+      -
+        name: CONSOLE_LOG_PATTERN
+        value: "%clr{%d{${LOG_DATEFORMAT_PATTERN}}}{faint} %clr{${LOG_LEVEL_PATTERN}}{magenta} %clr{---}{faint} %clr{[%15.15t]}{faint} %clr{%-40.40c{1.}}{cyan} %clr{:}{faint} %m%n${sys:LOG_EXCEPTION_CONVERSION_WORD}"
+      -
+        name: FILE_LOG_PATTERN
+        value: "%d{${LOG_DATEFORMAT_PATTERN}} ${LOG_LEVEL_PATTERN} --- [%t] %-40.40c{1.} : %m%n${sys:LOG_EXCEPTION_CONVERSION_WORD}"
+
+  Appenders:
+    Console:
+      name: console_out_appender
+      target: SYSTEM_OUT
+      ThresholdFilter:
+        level: DEBUG
+        onMatch: ACCEPT
+        onMismatch: DENY
+      PatternLayout:
+        pattern: ${sys:CONSOLE_LOG_PATTERN}
+
+    RollingFile:
+      -
+        name: trace_appender
+        immediateFlush: true
+        fileName: ${sys:LOG_FILE}/trace.log
+        filePattern: ${sys:LOG_PATH}/trace/$${date:yyyy-MM}/app-%d{yyyy-MM-dd-HH}-%i.log.gz
+        PatternLayout:
+          pattern: ${sys:FILE_LOG_PATTERN}
+        Policies:
+          SizeBasedTriggeringPolicy:
+            size: 20MB
+        Filters:
+          ThresholdFilter:
+            level: DEBUG
+            onMatch: DENY
+            onMismatch: NEUTRAL
+          ThresholdFilter:
+            level: TRACE
+            onMatch: ACCEPT
+            onMismatch: DENY
+      -
+        name: debug_appender
+        immediateFlush: true
+        fileName: ${LOG_FILE}/debug.log
+        filePattern: ${sys:LOG_PATH}/debug/$${date:yyyy-MM}/app-%d{yyyy-MM-dd-HH}-%i.log.gz
+        PatternLayout:
+          pattern: ${sys:FILE_LOG_PATTERN}
+        Policies:
+          SizeBasedTriggeringPolicy:
+            size: 20MB
+        Filters:
+          ThresholdFilter:
+            level: INFO
+            onMatch: DENY
+            onMismatch: NEUTRAL
+          ThresholdFilter:
+            level: DEBUG
+            onMatch: ACCEPT
+            onMismatch: DENY
+      -
+        name: info_appender
+        immediateFlush: true
+        fileName: ${LOG_FILE}/info.log
+        filePattern: ${sys:LOG_PATH}/info/$${date:yyyy-MM}/app-%d{yyyy-MM-dd-HH}-%i.log.gz
+        PatternLayout:
+          pattern: ${sys:FILE_LOG_PATTERN}
+        Policies:
+          SizeBasedTriggeringPolicy:
+            size: 20MB
+        Filters:
+          ThresholdFilter:
+            level: WARN
+            onMatch: DENY
+            onMismatch: NEUTRAL
+          ThresholdFilter:
+            level: INFO
+            onMatch: ACCEPT
+            onMismatch: DENY
+      -
+        name: warn_appender
+        immediateFlush: true
+        fileName: ${LOG_FILE}/warn.log
+        filePattern: ${sys:LOG_PATH}/warn/$${date:yyyy-MM}/app-%d{yyyy-MM-dd-HH}-%i.log.gz
+        PatternLayout:
+          pattern: ${sys:FILE_LOG_PATTERN}
+        Policies:
+          SizeBasedTriggeringPolicy:
+            size: 20MB
+        Filters:
+          ThresholdFilter:
+            level: ERROR
+            onMatch: DENY
+            onMismatch: NEUTRAL
+          ThresholdFilter:
+            level: WARN
+            onMatch: ACCEPT
+            onMismatch: DENY
+      -
+        name: error_appender
+        immediateFlush: true
+        fileName: ${LOG_FILE}/error.log
+        filePattern: ${sys:LOG_PATH}/error/$${date:yyyy-MM}/app-%d{yyyy-MM-dd-HH}-%i.log.gz
+        PatternLayout:
+          pattern: ${sys:FILE_LOG_PATTERN}
+        Policies:
+          SizeBasedTriggeringPolicy:
+            size: 20MB
+        Filters:
+          ThresholdFilter:
+            level: ERROR
+            onMatch: ACCEPT
+            onMismatch: DENY
+
+  Loggers:
+    root:
+      level: TRACE
+      AppenderRef:
+        - ref: console_out_appender
+        - ref: trace_appender
+        - ref: debug_appender
+        - ref: info_appender
+        - ref: warn_appender
+        - ref: error_appender
+
+    logger:
+      -
+        name: org.springframework.core
+        level: INFO
+      -
+        name: org.springframework.beans
+        level: INFO
+      -
+        name: org.springframework.context
+        level: INFO
+      -
+        name: org.springframework.web
+        level: INFO
+      -
+        name: com.jiong.encounter.mapper
+        level: DEBUG
+        additivity: false
+        AppenderRef:
+          ref: console_out_appender
+      -
+        name: druid.sql.Statement
+        level: DEBUG
+        additivity: false
+        AppenderRef:
+          ref: console_out_appender
+      -
+        name: druid.sql.ResultSet
+        level: DEBUG
+        additivity: false
+        AppenderRef:
+          ref: console_out_appender
+
