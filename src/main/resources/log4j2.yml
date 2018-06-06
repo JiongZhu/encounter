@@ -8,7 +8,7 @@ Configuration:
     #生产：-Dlog.level.console=warn -Dlog.level.xjj=info
       -
         name: LOG_PATH
-        value: F://log//logs
+        value: /opt/logs
       -
         name: LOG_FILE
         value: ${LOG_PATH}
