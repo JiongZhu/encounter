@@ -16,7 +16,6 @@ apply plugin: 'org.springframework.boot'
 apply plugin: 'io.spring.dependency-management'
 
 group = 'com.jiong'
-version = '0.0.1-SNAPSHOT'
 //编码环境jdk版本
 sourceCompatibility = 1.8
 //编译时jdk版本
@@ -84,4 +83,8 @@ dependencies {
             'org.projectlombok:lombok'
     )
     testCompile('org.springframework.boot:spring-boot-starter-test')
+}
+
+jar{
+    baseName = 'encounter-service'
 }
