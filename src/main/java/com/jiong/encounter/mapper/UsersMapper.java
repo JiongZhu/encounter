@@ -2,7 +2,6 @@ package com.jiong.encounter.mapper;
 
 import com.jiong.encounter.entity.Users;
 import com.baomidou.mybatisplus.mapper.BaseMapper;
-import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;

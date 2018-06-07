@@ -10,7 +10,10 @@ import lombok.Setter;
  * @Modified By:
  */
 public class DescribeException extends RuntimeException{
-    @Getter
+
+    private static final long serialVersionUID = 1L;
+    
+	@Getter
     @Setter
     private Integer stateCode;
 
