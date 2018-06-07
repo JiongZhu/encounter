@@ -85,12 +85,3 @@ dependencies {
     )
     testCompile('org.springframework.boot:spring-boot-starter-test')
 }
-
-task copyJar(type: Copy) {
-    from "build/libs/encounter-1.0.jar"
-    into "/service/"
-}
-
-task tomcatRun() {
-    ant.java(jar:"/service/encounter-1.0.jar",fork:true)
-}
