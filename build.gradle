@@ -29,7 +29,7 @@ tasks.withType(JavaCompile) {
 repositories {
     mavenLocal()    //maven本地仓库
     maven { url "http://maven.aliyun.com/nexus/content/groups/public/" }  //maven国内阿里镜像
-    maven { url "http://uk.maven.org/maven2/" }  //maven英国仓库
+    maven { url "http://uk.maven.org/maven2/" }  //maven英国
     jcenter()
     mavenCentral()  //maven中央仓库
 }
