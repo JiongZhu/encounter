@@ -1,4 +1,6 @@
 server:
+  servlet:
+    path: /encounter/
   port: 8888
 
 spring:
