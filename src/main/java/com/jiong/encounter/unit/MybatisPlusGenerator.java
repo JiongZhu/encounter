@@ -25,7 +25,7 @@ public class MybatisPlusGenerator {
                         .setDriverName("com.mysql.jdbc.Driver")
                         .setUsername("root")
                         .setPassword("zhxy")
-                        .setUrl("jdbc:mysql://39.106.205.37:3306/encounter?useUnicode=true&characterEncoding=utf-8&useSSL=false")
+                        .setUrl("jdbc:mysql://localhost:3306/encounter?useUnicode=true&characterEncoding=utf-8&useSSL=false")
         ).setStrategy(// 策略配置
                 new StrategyConfig()
                         .setNaming(NamingStrategy.underline_to_camel)// 表名生成策略
