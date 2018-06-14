@@ -20,3 +20,4 @@ after_success:
 before_install:
 - openssl aes-256-cbc -K $encrypted_b9696344eb20_key -iv $encrypted_b9696344eb20_iv
   -in id_rsa.enc -out ~\/.ssh/id_rsa -d
+- chmod 600 ~/.ssh/id_rsa
