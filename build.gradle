@@ -24,9 +24,6 @@ targetCompatibility = 1.8
 tasks.withType(JavaCompile) {
     options.encoding = 'UTF-8'
 }
-springBoot {
-    executable = true
-}
 
 repositories {
     mavenLocal()    //maven本地仓库
@@ -83,4 +80,8 @@ dependencies {
             'org.projectlombok:lombok'
     )
     testCompile('org.springframework.boot:spring-boot-starter-test')
+}
+
+bootJar {
+	launchScript()
 }
