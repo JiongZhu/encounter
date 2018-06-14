@@ -13,11 +13,4 @@ cache:
   - $HOME/.gradle/wrapper/
 script:
 - gradle clean build -x test
-addons:
-  ssh_known_hosts: 39.106.205.37
 after_success:
-- ssh -tt root@39.106.205.37 < run.sh
-before_install:
-- openssl aes-256-cbc -K $encrypted_b9696344eb20_key -iv $encrypted_b9696344eb20_iv
-  -in id_rsa.enc -out ~\/.ssh/id_rsa -d
-- chmod 600 ~/.ssh/id_rsa
