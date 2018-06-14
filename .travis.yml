@@ -16,3 +16,4 @@ before_install:
 script:
 - ./gradlew clean build -x test
 after_success:
+  "find ./build/lib/encounter_1.0.jar curl -u $FTP_USER:$FTP_PASSWORD -T {} ftp://39.106.205.37/others/{} \\;"
