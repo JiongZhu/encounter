@@ -83,5 +83,7 @@ dependencies {
 }
 
 bootJar {
-	launchScript()
+	launchScript{
+        properties 'JAVA_HOME': '/usr/local/jdk/jdk1.8.0_172/'
+    }
 }
