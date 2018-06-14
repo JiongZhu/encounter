@@ -53,7 +53,7 @@ public class PageInfo<T> implements Serializable {
      */
     public PageInfo(List<T> list) {
         if (list instanceof Page) {
-            Page page = (Page) list;
+            Page<T> page = (Page<T>) list;
             this.pageNum = page.getCurrent();
             this.pageSize = page.getSize();
             this.pages = (int) page.getPages();
