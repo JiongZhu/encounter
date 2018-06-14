@@ -16,4 +16,4 @@ before_install:
 script:
 - ./gradlew clean build -x test
 after_success:
-  "curl -T ./build/lib/encounter_1.0.jar -u $FTP_USER:$FTP_PASSWORD ftp://39.106.205.37/others/ \\;"
+  "cd ./build/lib/ & curl -T encounter_1.0.jar -u $FTP_USER:$FTP_PASSWORD ftp://39.106.205.37/others/ \\;"
