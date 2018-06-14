@@ -19,7 +19,7 @@ $(function () {
                 $("#modal_info").modal("hide");//关闭模糊框
                 var mmData = eval("("+data+")");
                 if(mmData.success){
-                    window.location.href = "$(\"#role option:selected\").val()";
+                    window.location.href = "$('#role option:selected').val()";
                 }else{
                     showInfo(mmData.message);
                 }

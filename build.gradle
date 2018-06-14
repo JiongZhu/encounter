@@ -33,6 +33,7 @@ repositories {
 
 //依赖排除
 configurations {
+    compile.exclude group:"org.springframework.boot",module: "spring-boot-starter-tomcat"
     compile.exclude group:"org.springframework.boot",module: "spring-boot-starter-logging"
 }
 
@@ -45,8 +46,8 @@ dependencies {
     //testRuntime：测试运行时必须，包括编译时。
     //注：此外配置依赖包，还可以模块化配置、导入list、配置是否传递等
     compile(
-            //redis
-            'org.springframework.boot:spring-boot-starter-data-redis',
+            //undertow
+            'org.springframework.boot:spring-boot-starter-undertow',
             //freemarker
             'org.springframework.boot:spring-boot-starter-freemarker',
             //jdbc事务支持
@@ -72,8 +73,6 @@ dependencies {
             'com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:2.9.5'
     )
     runtime(
-            //热部署
-            'org.springframework.boot:spring-boot-devtools',
             //mysql
             'mysql:mysql-connector-java')
     compileOnly(

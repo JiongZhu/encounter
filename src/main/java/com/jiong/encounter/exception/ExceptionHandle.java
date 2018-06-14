@@ -1,13 +1,12 @@
 package com.jiong.encounter.exception;
 
+import javax.servlet.http.HttpServletRequest;
 import com.jiong.encounter.unit.ResultUtil;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 import org.springframework.web.servlet.ModelAndView;
-
-import javax.servlet.http.HttpServletRequest;
 
 /**
  * @Author: JiongZhu

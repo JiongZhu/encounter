@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Management system of part Trading Center</title>
+    <title>零件交易中心管理系统</title>
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <link rel="stylesheet" href="components/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="components/font-awesome/css/fontawesome-all.min.css">
@@ -14,7 +14,7 @@
 <body class="hold-transition login-page">
 <div class="login-box">
     <div class="login-logo">
-        <a href="#"><b>PTC-MS</b> Admin</a>
+        <a href="#"><b>PTC-MS</b> LOGIN</a>
     </div>
     <!-- /.login-logo -->
     <div class="login-box-body">
