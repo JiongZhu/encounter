@@ -24,7 +24,7 @@ public class MybatisPlusGenerator {
                         .setDbType(DbType.MYSQL)// 数据库类型
                         .setDriverName("com.mysql.jdbc.Driver")
                         .setUsername("root")
-                        .setPassword("zhxy")
+                        .setPassword("524536@Zhxy")
                         .setUrl("jdbc:mysql://localhost:3306/encounter?useUnicode=true&characterEncoding=utf-8&useSSL=false")
         ).setStrategy(// 策略配置
                 new StrategyConfig()
