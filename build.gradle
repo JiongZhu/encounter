@@ -52,6 +52,8 @@ dependencies {
             'org.springframework.boot:spring-boot-starter-freemarker',
             //jdbc事务支持
             'org.springframework.boot:spring-boot-starter-jdbc',
+            //redis
+            'org.springframework.boot:spring-boot-starter-data-redis',
             //web
             'org.springframework.boot:spring-boot-starter-web',
             //mybatis plus

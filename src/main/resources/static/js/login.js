@@ -13,15 +13,15 @@ $(function () {
             data: {
                 username: $.trim($("#username").val()),
                 password: $.trim($("#password").val()),
-                role: $("#role option:selected").val()
+                loginType: $("#role option:selected").val()
             },
             success: function (data) {
                 $("#modal_info").modal("hide");//关闭模糊框
                 var mmData = eval("("+data+")");
-                if(mmData.success){
+                if(mmData.success==true){
                     window.location.href = "$('#role option:selected').val()";
                 }else{
-                    showInfo(mmData.message);
+                    showInfo(mmData.success);
                 }
             },
             error: function (jqXHR, textStatus, errorThrown) {

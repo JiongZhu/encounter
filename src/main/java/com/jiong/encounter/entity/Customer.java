@@ -2,9 +2,6 @@ package com.jiong.encounter.entity;
 
 import com.baomidou.mybatisplus.activerecord.Model;
 import java.io.Serializable;
-import java.util.List;
-
-import com.baomidou.mybatisplus.annotations.TableField;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
