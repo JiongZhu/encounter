@@ -3,6 +3,8 @@ package com.jiong.encounter.entity;
 import com.baomidou.mybatisplus.activerecord.Model;
 import java.io.Serializable;
 
+import com.baomidou.mybatisplus.annotations.TableId;
+import com.baomidou.mybatisplus.enums.IdType;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
@@ -25,6 +27,7 @@ public class Administrator extends Model<Administrator> {
     /**
      * 管理员编�?
      */
+    @TableId(type = IdType.INPUT)
     private String admNo;
     /**
      * 管理员登录密�?

@@ -4,22 +4,20 @@ $(function () {
         if (!validLogin()) {
             return;
         }
-
+        let username = $.trim($("#username").val());
+        let password = $.trim($("#password").val());
+        let loginType = $("#role option:selected").val();
         $.ajax({
             type: 'POST',
             url: 'login',
             cache: false,
             dataType:'json',
-            data: {
-                username: $.trim($("#username").val()),
-                password: $.trim($("#password").val()),
-                loginType: $("#role option:selected").val()
-            },
+            data: {username, password, loginType},
             success: function (data) {
                 $("#modal_info").modal("hide");//关闭模糊框
-                var mmData = eval("("+data+")");
+                let mmData = eval("("+data+")");
                 if(mmData.success==true){
-                    window.location.href = "$('#role option:selected').val()";
+                    window.location.href = loginType;
                 }else{
                     showInfo(mmData.success);
                 }
@@ -34,9 +32,8 @@ $(function () {
 });
 
 function validLogin() {
-    var flag = true;
-
-    var username = $.trim($("#username").val());
+    let flag = true;
+    let username = $.trim($("#username").val());
     if (username == "") {
         $('#username').parent().addClass("has-error");
         $('#username').next().next().html("<i class='fa fa-times-circle-o'></i>    请输入账号");
@@ -53,7 +50,7 @@ function validLogin() {
         $("#username").next().next().hide();
     }
 
-    var password = $.trim($("#password").val());
+    let password = $.trim($("#password").val());
     if (password == "") {
         $('#password').parent().addClass("has-error");
         $('#password').next().next().html("<i class='fa fa-times-circle-o'></i>    请输入密码");

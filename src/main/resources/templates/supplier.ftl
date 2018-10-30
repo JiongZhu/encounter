@@ -42,15 +42,14 @@
                             <!-- The user image in the navbar-->
                             <img src="images/user2-160x160.jpg" class="user-image" alt="User Image">
                             <!-- hidden-xs hides the username on small devices so only the image appears. -->
-                            <span class="hidden-xs">${Session.admin.name!}</span>
+                            <span class="hidden-xs"></span>
                         </a>
                         <ul class="dropdown-menu">
                             <!-- The user image in the menu -->
                             <li class="user-header">
                                 <img src="images/user2-160x160.jpg" class="img-circle" alt="User Image">
 
-                                <p>
-                                ${Session.admin.name!} - 供应商
+                                <p>供应商
                                     <small>Member since Mar. 2018</small>
                                 </p>
                             </li>
@@ -64,7 +63,7 @@
                                         <a href="#updatepwd" class="btn btn-default btn-flat" data-toggle="modal">修改密码</a>
                                     </div>
                                     <div class="col-xs-4 text-center">
-                                        <a href="${base}/admin/adminLogout" class="btn btn-default btn-flat">退出</a>
+                                        <a href="admin/adminLogout" class="btn btn-default btn-flat">退出</a>
                                     </div>
                                 </div>
                                 <!-- /.row -->
@@ -87,7 +86,7 @@
                     <img src="images/user2-160x160.jpg" class="img-circle" alt="User Image">
                 </div>
                 <div class="pull-left info">
-                    <p>${Session.admin.name!}</p>
+                    <p></p>
                     <!-- Status -->
                     <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
                 </div>
@@ -97,10 +96,10 @@
             <ul class="sidebar-menu" data-widget="tree">
                 <li class="header">菜单导航</li>
                 <!-- Optionally, you can add icons to the links -->
-                <li class="active"><a href="#"><i class="fa fa-cart-plus"></i> <span>零件供应管理</span></a></li>
-                <li><a href="#"><i class="fa fa-user-cog"></i> <span>供应商个人信息</span></a></li>
-                <li><a href="#"><i class="fa fa-comments"></i> <span>交易建议管理</span></a></li>
-                <li><a href="#"><i class="fa fa-handshake"></i> <span>交易订单管理</span></a></li>
+                <li class="active"><a href="supplier/manageAccommdate"><i class="fa fa-cart-plus"></i> <span>零件供应管理</span></a></li>
+                <li><a href="supplier/manageSupplier"><i class="fa fa-user-cog"></i> <span>供应商个人信息</span></a></li>
+                <li><a href="supplier/manageAdvice"><i class="fa fa-comments"></i> <span>交易建议管理</span></a></li>
+                <li><a href="supplier/manageTransaction"><i class="fa fa-handshake"></i> <span>交易订单管理</span></a></li>
             </ul>
             <!-- /.sidebar-menu -->
         </section>
@@ -116,7 +115,7 @@
                 <small>功能描述</small>
             </h1>
             <ol class="breadcrumb">
-                <li class="active"><a href="${base}/admin/admin"><i class="fa fa-home"></i> 首页</a></li>
+                <li class="active"><a href="admin/admin"><i class="fa fa-home"></i> 首页</a></li>
             </ol>
         </section>
 
@@ -235,8 +234,8 @@
         <strong>Copyright &copy; 2017-2018 <a href="#">PTC</a>.</strong> All rights reserved.
     </footer>
 </div>
-<script src="components/jquery/jquery.min.js"></script>
-<script src="components/bootstrap/js/bootstrap.min.js"></script>
-<script src="js/adminlte.min.js"></script>
+<script type="text/javascript" src="components/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="components/bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/adminlte.min.js"></script>
 </body>
 </html>

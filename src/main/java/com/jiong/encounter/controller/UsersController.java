@@ -16,14 +16,14 @@ import java.util.List;
 @Controller
 @RequestMapping(value = "/users")
 public class UsersController {
-    JSONObject jsonObject;
+    private JSONObject jsonObject;
 
     @Autowired
     UsersMapper usersMapper;
 
     @RequestMapping(value = "/all",method = RequestMethod.GET)
     @ResponseBody
-    public JSONObject getUserList() throws JsonProcessingException {
+    public JSONObject getUserList() {
         jsonObject = new JSONObject();
         jsonObject.put("aaData", usersMapper.selectList(null));
         return jsonObject;

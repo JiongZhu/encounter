@@ -3,6 +3,8 @@ package com.jiong.encounter.entity;
 import com.baomidou.mybatisplus.activerecord.Model;
 import java.io.Serializable;
 
+import com.baomidou.mybatisplus.annotations.TableId;
+import com.baomidou.mybatisplus.enums.IdType;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
@@ -25,6 +27,7 @@ public class Supplier extends Model<Supplier> {
     /**
      * 供应商编�?
      */
+    @TableId(type = IdType.INPUT)
     private String supNo;
     /**
      * 供应商登录密�?

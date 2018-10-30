@@ -3,6 +3,8 @@ package com.jiong.encounter.entity;
 import com.baomidou.mybatisplus.activerecord.Model;
 import java.io.Serializable;
 
+import com.baomidou.mybatisplus.annotations.TableId;
+import com.baomidou.mybatisplus.enums.IdType;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
@@ -25,6 +27,7 @@ public class Customer extends Model<Customer> {
     /**
      * 顾客编号
      */
+    @TableId(type = IdType.INPUT)
     private String cusNo;
     /**
      * 顾客登录密码
