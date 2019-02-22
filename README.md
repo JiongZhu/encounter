@@ -24,29 +24,29 @@
 
 数据流图
 
-![数据流图](http://otmfpj0s2.bkt.clouddn.com/encounter/1.png)
+![mark](http://cdn.zhuj.top/blog/20190222/ag2kXeJNciSS.png?imageslim)
 
 数据库设计
 
-![数据库设计](http://otmfpj0s2.bkt.clouddn.com/encounter/2.png)
+![mark](http://cdn.zhuj.top/blog/20190222/wTL2s5EoP38x.png?imageslim)
 
 登录界面
 
-![登录界面](http://otmfpj0s2.bkt.clouddn.com/encounter/3.png)
+![mark](http://cdn.zhuj.top/blog/20190222/fchcdI6Kt1V7.png?imageslim)
 
 管理员主界面
 
-![管理员主界面](http://otmfpj0s2.bkt.clouddn.com/encounter/4.png)
+![mark](http://cdn.zhuj.top/blog/20190222/mMXVAA2PwhjY.png?imageslim)
 
 供应商供应信息
 
-![供应商信息](http://otmfpj0s2.bkt.clouddn.com/encounter/5.png)
+![mark](http://cdn.zhuj.top/blog/20190222/mI3AbitbnmPK.png?imageslim)
 
 零件信息
 
-![零件信息](http://otmfpj0s2.bkt.clouddn.com/encounter/6.png)
+![mark](http://cdn.zhuj.top/blog/20190222/5aUMhjDsxdQu.png?imageslim)
 
 交易员主界面
 
-![交易员主界面](http://otmfpj0s2.bkt.clouddn.com/encounter/7.png)
+![mark](http://cdn.zhuj.top/blog/20190222/MKmEAbzxexpd.png?imageslim)
 
